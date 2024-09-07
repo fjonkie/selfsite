@@ -1,2 +1,91 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang=ts>
+    import Buttoncomp from './components/Buttoncomp.svelte';
+    import { buttonId } from './stores';
+    
+    const buttonIdPairs: { [key:number]: string } = {
+        0: "fjonked up introduction",
+        1: "various things about me",
+        2: "things to call me",
+        3: "links"
+    }
+
+    const aboutMeText: string = '\
+        hiya!! :3 im not good at writing or whatever so ill just list off various things about me\
+        <br>\
+        i live in agder, norway\
+        <br>\
+        i like mostly anything that has something to do with computers (programming, pc building, fiddling around in linux, modding nintendo consoles and installing custom roms)\
+        <br>\
+        i have a severe case of brainrot\
+        <br>\
+        unreliable, needs someone to rely on, pathetic and apathetic\
+        <br>\
+        im usually very direct\
+        <br>\
+        i tend to be affectionate towards people when i first meet them and then forget how to talk after a few days\
+        <br>\
+        im horrible at keeping up conversations except if im playing a game with you\
+        <br>\
+        im comfortable with vc (if you dont mind my voice) and im avaliable like a lot\
+        <br>\
+        you can ask or tell me just about anything as there is a very low chance i would mind\
+        <br>\
+        oh yeah im also like horrible at coming up with stuff like this so if theres anying youre curious about like actually please ask me i love answering questions (unless theyre about my body)\
+        <br>\
+        when i have nothing to say, my lips are sealed\
+        <br>\
+        if you made it here thats cool &lt;3';
+
+    const thingsToCallMe: string = '\
+    <h2>compliments</h2>\
+    <p style="color: pink">cute</p>\
+    <p style="color: pink">good girl</p>';
+</script>
+
+
+<body>
+    <div class="card">
+        <h1>{buttonIdPairs[$buttonId]}</h1>
+
+        <div class="buttonsDiv">
+            <Buttoncomp textContent={aboutMeText} buttonLabel="about me" currentButton={1}/>
+            <Buttoncomp textContent={thingsToCallMe} buttonLabel="TTCM" currentButton={2}/>
+        </div>
+
+        <hr>
+    </div>
+</body>
+
+<style>
+    h1, :global(p) {
+        color: white;
+        font-family: sans-serif;
+    }
+
+    :global(p) {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .card {
+        display: block;
+        background-color: #0f0f0f;
+        padding: 17px;
+        border-radius: 25px;
+        max-width: 78%;
+        margin: auto;
+    }
+
+    .buttonsDiv {
+        display: inline;
+    }
+
+    .pinkText {
+        color: pink;
+    }
+
+</style>
+
+<!-- 
+<h2>compliments</h2>
+<p class="pinkText">cute</p> -->

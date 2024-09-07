@@ -10,9 +10,10 @@
         textState = !textState;
         if($buttonId === currentButton) {
             buttonId.set(0)
-        } else {
+        } else { //this is quite buggy rn but i have no idea how to fix it
             buttonId.set(currentButton)
         }
+
     }
 
     export let textContent: string = "placeholder";
@@ -33,7 +34,7 @@
 <div transition:slide={{ delay: 0, duration: 300, axis: 'y' }}>
     <!-- dont forget the @html thing this took you 30 minutes to figure out -->
     <p>
-        {@html textContent}
+        {@html textContent.replaceAll('\n', '<br>')}
     </p>
 </div>
 {/if}

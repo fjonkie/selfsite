@@ -9,37 +9,25 @@
         3: "links"
     }
 
-    const aboutMeText: string = '\
-        hiya!! :3 im not good at writing or whatever so ill just list off various things about me\
-        <br>\
-        i live in agder, norway\
-        <br>\
-        i like mostly anything that has something to do with computers (programming, pc building, fiddling around in linux, modding nintendo consoles and installing custom roms)\
-        <br>\
-        i have a severe case of brainrot\
-        <br>\
-        unreliable, needs someone to rely on, pathetic and apathetic\
-        <br>\
-        im usually very direct\
-        <br>\
-        i tend to be affectionate towards people when i first meet them and then forget how to talk after a few days\
-        <br>\
-        im horrible at keeping up conversations except if im playing a game with you\
-        <br>\
-        im comfortable with vc (if you dont mind my voice) and im avaliable like a lot\
-        <br>\
-        you can ask or tell me just about anything as there is a very low chance i would mind\
-        <br>\
-        oh yeah im also like horrible at coming up with stuff like this so if theres anying youre curious about like actually please ask me i love answering questions (unless theyre about my body)\
-        <br>\
-        when i have nothing to say, my lips are sealed\
-        <br>\
-        if you made it here thats cool &lt;3';
+    const aboutMeText: string = `
+        hiya!! :3 im not good at writing or whatever so ill just list off various things about me
+        i live in agder, norway
+        i like mostly anything that has something to do with computers (programming, pc building, fiddling around in linux, modding nintendo consoles and installing custom roms)
+        i have a severe case of brainrot
+        unreliable, needs someone to rely on, pathetic and apathetic
+        im usually very direct
+        i tend to be affectionate towards people when i first meet them and then forget how to talk after a few days
+        im horrible at keeping up conversations except if im playing a game with you
+        im comfortable with vc (if you dont mind my voice) and im avaliable like a lot
+        you can ask or tell me just about anything as there is a very low chance i would mind
+        oh yeah im also like horrible at coming up with stuff like this so if theres anying youre curious about like actually please ask me i love answering questions (unless theyre about my body)
+        when i have nothing to say, my lips are sealed
+        if you made it here thats cool &lt;3`;
 
-    const thingsToCallMe: string = '\
-    <h2>compliments</h2>\
-    <p style="color: pink">cute</p>\
-    <p style="color: pink">good girl</p>';
+    const thingsToCallMe: string = `
+    <h2>compliments</h2>
+    <p style="color: pink">cute</p>
+    <p style="color: pink">good girl</p>`;
 </script>
 
 
@@ -78,10 +66,6 @@
 
     .buttonsDiv {
         display: inline;
-    }
-
-    .pinkText {
-        color: pink;
     }
 
 </style>

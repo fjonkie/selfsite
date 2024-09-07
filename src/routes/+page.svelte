@@ -4,7 +4,7 @@
     import { slide } from 'svelte/transition';
     
     const buttonIdArr: string[] = [
-        "fjonked up introduction",
+        "cool transition",
         "various things about me",
         "things to call me",
         "links",
@@ -43,7 +43,6 @@
         <h1>{buttonIdArr[$buttonId]}</h1>
 
         <div class="buttonsDiv">
-            <Buttoncomp buttonLabel="" currentButton={0}/>
             <Buttoncomp buttonLabel="about me" currentButton={1}/>
             <Buttoncomp buttonLabel="TTCM" currentButton={2}/>
         </div>
@@ -74,7 +73,7 @@
 
     .card {
         display: block;
-        background-color: #0f0f0f;
+        background-color: #101010;
         padding: 17px;
         border-radius: 25px;
         max-width: 78%;
@@ -90,13 +89,6 @@
     }
     h1 {
         margin-bottom: 1rem;
-    }
-    button {
-    background-color: #0e0e0e;
-    color: white;
-    border-radius: 15px;
-    margin-bottom: 0.5rem;
-    margin-top: 1rem;
     }
 </style>
 

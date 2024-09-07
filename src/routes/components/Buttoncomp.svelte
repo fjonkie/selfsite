@@ -3,7 +3,7 @@
     import { buttonId } from '../stores';
 
     let textState: boolean = false;
-    export let currentButton: number = 0;
+    export let currentButton: number = 1;
 
     function showHideText() {
         textState = !textState;

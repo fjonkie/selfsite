@@ -1,16 +1,19 @@
 <script lang=ts>
     import Buttoncomp from './components/Buttoncomp.svelte';
     import { buttonId } from './stores';
+    import { slide } from 'svelte/transition';
     
-    const buttonIdPairs: { [key:number]: string } = {
-        0: "fjonked up introduction",
-        1: "various things about me",
-        2: "things to call me",
-        3: "links"
-    }
+    const buttonIdArr: string[] = [
+        "cool transition",
+        "various things about me",
+        "things to call me",
+        "links",
+        "about site"
+    ]
 
-    const aboutMeText: string = `
-        hiya!! :3 im not good at writing or whatever so ill just list off various things about me
+    const textIdArr: string[] = [
+        ``,
+        `hiya!! :3 im not good at writing or whatever so ill just list off various things about me
         i live in agder, norway
         i like mostly anything that has something to do with computers (programming, pc building, fiddling around in linux, modding nintendo consoles and installing custom roms)
         i have a severe case of brainrot
@@ -22,23 +25,36 @@
         you can ask or tell me just about anything as there is a very low chance i would mind
         oh yeah im also like horrible at coming up with stuff like this so if theres anying youre curious about like actually please ask me i love answering questions (unless theyre about my body)
         when i have nothing to say, my lips are sealed
-        if you made it here thats cool &lt;3`;
+        if you made it here thats cool &lt;3`,
 
-    const thingsToCallMe: string = `
-    <h2>compliments</h2>
-    <p style="color: pink">cute</p>
-    <p style="color: pink">good girl</p>`;
+        `<h2>compliments</h2>   <span style="color: pink">cute</span>
+    <span style="color: pink">good girl</span>`,
+
+        `things to call me`,
+
+        `links`
+    ]
+
 </script>
 
 
 <body>
     <div class="card">
-        <h1>{buttonIdPairs[$buttonId]}</h1>
+        <h1>{buttonIdArr[$buttonId]}</h1>
 
         <div class="buttonsDiv">
-            <Buttoncomp textContent={aboutMeText} buttonLabel="about me" currentButton={1}/>
-            <Buttoncomp textContent={thingsToCallMe} buttonLabel="TTCM" currentButton={2}/>
+            <Buttoncomp buttonLabel="about me" currentButton={1}/>
+            <Buttoncomp buttonLabel="TTCM" currentButton={2}/>
         </div>
+
+        {#if $buttonId !== 0}
+            <div transition:slide={{ delay: 0, duration: 300, axis: 'y' }}>
+            <!-- dont forget the @html thing this took you 30 minutes to figure out -->
+            <p>
+                {@html textIdArr[$buttonId].replaceAll('\n', '<br>')}
+            </p>
+            </div>
+        {/if}
 
         <hr>
     </div>
@@ -57,7 +73,7 @@
 
     .card {
         display: block;
-        background-color: #0f0f0f;
+        background-color: #101010;
         padding: 17px;
         border-radius: 25px;
         max-width: 78%;
@@ -67,9 +83,13 @@
     .buttonsDiv {
         display: inline;
     }
-
+    /* no default margins */
+    :global(h1, h2, h3, h4, h5, h6, p, span, a, strong, em, blockquote, cite, q, abbr, del, ins, mark, sub, sup, code, pre, kbd, var, samp, ol, ul) {
+        margin: unset;
+    }
+    h1 {
+        margin-bottom: 1rem;
+    }
 </style>
 
-<!-- 
-<h2>compliments</h2>
-<p class="pinkText">cute</p> -->
+<footer>this is extremely unfinished</footer>

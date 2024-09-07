@@ -93,3 +93,8 @@
 </style>
 
 <footer>this is extremely unfinished</footer>
+
+
+<!-- <h2>compliments</h2>   <span style="color: pink">cute</span>
+<span style="color: pink">good girl</span>
+<h2 -->

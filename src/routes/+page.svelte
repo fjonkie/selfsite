@@ -28,11 +28,13 @@
         if you made it here thats cool &lt;3`,
 
         `<h2>compliments</h2>   <span style="color: pink">cute</span>
-    <span style="color: pink">good girl</span>`,
+<span style="color: pink">good girl</span>
+<h2>names</h2> <span>mari <i>/mɑri/</i></span>
+<span>fjonkie <i>/fjɒnki/</i></span>`,
 
-        `things to call me`,
+        `insert links here (todo)`,
 
-        `links`
+        ` putthingsd about site here`
     ]
 
 </script>
@@ -45,6 +47,9 @@
         <div class="buttonsDiv">
             <Buttoncomp buttonLabel="about me" currentButton={1}/>
             <Buttoncomp buttonLabel="TTCM" currentButton={2}/>
+            <Buttoncomp buttonLabel="links" currentButton={3}/>
+            <Buttoncomp buttonLabel="about site" currentButton={4}/>
+
         </div>
 
         {#if $buttonId !== 0}
@@ -93,8 +98,3 @@
 </style>
 
 <footer>this is extremely unfinished</footer>
-
-
-<!-- <h2>compliments</h2>   <span style="color: pink">cute</span>
-<span style="color: pink">good girl</span>
-<h2 -->

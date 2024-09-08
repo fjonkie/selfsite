@@ -20,24 +20,32 @@
         unreliable, needs someone to rely on, pathetic and apathetic
         im usually very direct
         i tend to be affectionate towards people when i first meet them and then forget how to talk after a few days
+        can be very attention seeking and clingy at times
         im horrible at keeping up conversations except if im playing a game with you
-        im comfortable with vc (if you dont mind my voice) and im avaliable like a lot
+        im comfortable with vc (if you dont mind my voice)
         you can ask or tell me just about anything as there is a very low chance i would mind
-        oh yeah im also like horrible at coming up with stuff like this so if theres anying youre curious about like actually please ask me i love answering questions (unless theyre about my body)
+        i love answering questions (unless theyre about my body)
         when i have nothing to say, my lips are sealed
         if you made it here thats cool &lt;3`,
 
         `<h2>compliments</h2>   <span style="color: pink">cute</span>
-<span style="color: pink">good girl</span>
-<h2>names</h2> <span>mari <i>/mɑri/</i></span>
-<span>fjonkie <i>/fjɒnki/</i></span>`,
+        <span style="color: pink">good girl</span>
+        <span>dumbass</span>
+        <h2>names</h2> <span>mari <i>/mɑri/</i></span>
+        <span>fjonkie <i>/fjɒnki/</i></span>
+        <h2>pronouns</h2> <span style="color: pink">she/her</span>
+        <span>they/them</span>
+        <hr> <span style="color: pink">good&emsp;&emsp;&emsp;</span>    <span>ok</span>`,
 
-        `insert links here (todo)`,
+        `<img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.last.fm.ico' /> <a href="https://www.last.fm/user/hjjhhjhhhjhhjjh">last.fm</a>
+        `,
 
         ` putthingsd about site here`
     ]
 
 </script>
+
+<a href="https://www.last.fm/user/hjjhhjhhhjhhjjh">last.fm</a>
 
 
 <body>
@@ -66,14 +74,17 @@
 </body>
 
 <style>
-    h1, :global(p) {
+    h1, a, :global(p) {
         color: white;
         font-family: sans-serif;
     }
 
-    :global(p) {
+    :global(p), a {
         font-size: 1.2rem;
         font-weight: 500;
+    }
+    a:link, a:visited {
+        text-decoration: none;
     }
 
     .card {

@@ -104,5 +104,3 @@
         overflow: auto;
     }
 </style>
-
-<footer>this is extremely unfinished</footer>

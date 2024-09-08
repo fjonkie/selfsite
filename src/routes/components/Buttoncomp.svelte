@@ -2,21 +2,17 @@
     import Icon from '@iconify/svelte';
     import { buttonId } from '../stores';
 
-    let textState: boolean = false;
     export let currentButton: number = 1;
+    export let buttonLabel: string = "placeholder";
 
     function showHideText() {
-        textState = !textState;
-        if($buttonId !== 0 && $buttonId !== currentButton) {
+        if($buttonId !== currentButton) {
             buttonId.set(0)
             setTimeout(() => {
                 buttonId.set(currentButton)
             }, 350);
-        } else {
-            buttonId.set(currentButton)
         }
     }
-    export let buttonLabel: string = "placeholder";
 </script>
 
 

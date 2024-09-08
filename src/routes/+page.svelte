@@ -80,6 +80,9 @@
         display: block;
         background-color: #101010;
         padding: 17px;
+        border: solid;
+        border-color: white;
+        border-width: 2px;
         border-radius: 25px;
         max-width: 78%;
         margin: auto;
@@ -94,6 +97,9 @@
     }
     h1 {
         margin-bottom: 1rem;
+    }
+    body {
+        background-color: black;
     }
 </style>
 

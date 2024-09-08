@@ -100,6 +100,8 @@
     }
     body {
         background-color: black;
+        height: 100%;
+        overflow: auto;
     }
 </style>
 

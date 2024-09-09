@@ -31,6 +31,6 @@
         color: white;
         border-radius: 15px;
         margin-bottom: 0.5rem;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 </style>

@@ -2,6 +2,7 @@
     import Buttoncomp from './components/Buttoncomp.svelte';
     import { buttonId } from './stores';
     import { slide } from 'svelte/transition';
+    import fjonkPng from '$lib/assets/fjonk.png';
     
     const buttonIdArr: string[] = [
         "cool transition",
@@ -38,19 +39,26 @@
         <hr> <span style="color: pink">good&emsp;&emsp;&emsp;</span>    <span>ok</span>`,
 
         `<img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.last.fm.ico' /> <a href="https://www.last.fm/user/hjjhhjhhhjhhjjh">last.fm</a>
-        `,
+        <img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.roblox.com.ico' /> <a href="https://www.roblox.com/users/1580349892/profile">roblox</a>
+        <img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.steamcommunity.com.ico' /> <a href="https://steamcommunity.com/id/fjonker/">steam</a>
+`,
 
-        ` putthingsd about site here`
+        `<span>made entirely in svelte
+        held together by hopes and dreams
+        my friend <a style="text-decoration: underline;" href="https://f53.dev">cassie</a> motivated me to start this and helped with setting up the hosting
+        </span>
+        <a style="text-decoration: underline;" href="https://github.com/fjonkie/selfsite">source code</a>`
+        
     ]
 
 </script>
 
-<a href="https://www.last.fm/user/hjjhhjhhhjhhjjh">last.fm</a>
-
-
 <body>
     <div class="card">
-        <h1>{buttonIdArr[$buttonId]}</h1>
+        <div class="topBar">
+            <h1>{buttonIdArr[$buttonId]}</h1>
+            <img alt="fjonkie" src={fjonkPng} />
+        </div>
 
         <div class="buttonsDiv">
             <Buttoncomp buttonLabel="about me" currentButton={1}/>
@@ -74,17 +82,22 @@
 </body>
 
 <style>
-    h1, a, :global(p) {
+    h1, :global(p, a) {
         color: white;
         font-family: sans-serif;
     }
 
-    :global(p), a {
+    :global(p, a) {
         font-size: 1.2rem;
         font-weight: 500;
     }
-    a:link, a:visited {
+    :global(a:link, a:visited) {
         text-decoration: none;
+    }
+
+    :global(a:hover) {
+        text-decoration: underline;
+        color: #efefef;
     }
 
     .card {
@@ -106,8 +119,8 @@
     :global(h1, h2, h3, h4, h5, h6, p, span, a, strong, em, blockquote, cite, q, abbr, del, ins, mark, sub, sup, code, pre, kbd, var, samp, ol, ul) {
         margin: unset;
     }
-    h1 {
-        margin-bottom: 1rem;
+    .topBar {
+        min-height: 64px;
     }
     body {
         background-color: black;

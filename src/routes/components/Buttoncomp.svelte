@@ -30,6 +30,7 @@
         background-color: #040404;
         color: white;
         border-radius: 15px;
+        border-color: white;
         margin-bottom: 0.5rem;
         margin-top: 0.5rem;
     }

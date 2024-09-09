@@ -57,7 +57,7 @@
     <div class="card">
         <div class="topBar">
             <h1>{buttonIdArr[$buttonId]}</h1>
-            <img alt="fjonkie" src={fjonkPng} />
+            <!-- <img alt="fjonkie" src={fjonkPng} /> -->
         </div>
 
         <div class="buttonsDiv">

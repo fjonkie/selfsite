@@ -126,5 +126,7 @@
         background-color: black;
         height: 100%;
         overflow: auto;
+        margin: 0;
+        padding-top: 2%;
     }
 </style>

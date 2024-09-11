@@ -3,7 +3,7 @@
     import { buttonId } from './stores';
     import { slide } from 'svelte/transition';
     import fjonkPng from '$lib/assets/fjonk.png';
-    
+
     const buttonIdArr: string[] = [
         "cool transition",
         "various things about me",
@@ -40,70 +40,47 @@
 
         `<img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.last.fm.ico' /> <a href="https://www.last.fm/user/hjjhhjhhhjhhjjh">last.fm</a>
         <img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.roblox.com.ico' /> <a href="https://www.roblox.com/users/1580349892/profile">roblox</a>
-        <img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.steamcommunity.com.ico' /> <a href="https://steamcommunity.com/id/fjonker/">steam</a>
-`,
+        <img height="16" width="16" src='https://icons.duckduckgo.com/ip3/www.steamcommunity.com.ico' /> <a href="https://steamcommunity.com/id/fjonker/">steam</a>`,
 
         `<span>made entirely in svelte
         held together by hopes and dreams
         my friend <a style="text-decoration: underline;" href="https://f53.dev">cassie</a> motivated me to start this and helped with setting up the hosting
         </span>
         <a style="text-decoration: underline;" href="https://github.com/fjonkie/selfsite">source code</a>`
-        
     ]
 
 </script>
 
-<body>
-    <div class="card">
-        <div class="topBar">
-            <div class="topBarElement">
-                <h1 style="width: 100%;" >{buttonIdArr[$buttonId]}</h1>
-            </div>
-            <div class="topBarElement">
-                <img alt="fjonkie (idiot)" style="max-width: 100px" src={fjonkPng} />
-            </div>
+<div class="card">
+    <div class="topBar">
+        <div class="topBarElement">
+            <h1 style="width: 100%;" >{buttonIdArr[$buttonId]}</h1>
         </div>
-
-        <div class="buttonsDiv">
-            <Buttoncomp buttonLabel="about me" currentButton={1}/>
-            <Buttoncomp buttonLabel="TTCM" currentButton={2}/>
-            <Buttoncomp buttonLabel="links" currentButton={3}/>
-            <Buttoncomp buttonLabel="about site" currentButton={4}/>
-
+        <div class="topBarElement">
+            <img alt="fjonkie (idiot)" style="max-width: 100px" src={fjonkPng} />
         </div>
-
-        {#if $buttonId !== 0}
-            <div transition:slide={{ delay: 0, duration: 300, axis: 'y' }}>
-            <!-- dont forget the @html thing this took you 30 minutes to figure out -->
-            <p>
-                {@html textIdArr[$buttonId].replaceAll('\n', '<br>')}
-            </p>
-            </div>
-        {/if}
-
-        <hr>
     </div>
-</body>
+
+    <div class="buttonsDiv">
+        <Buttoncomp buttonLabel="about me" currentButton={1}/>
+        <Buttoncomp buttonLabel="TTCM" currentButton={2}/>
+        <Buttoncomp buttonLabel="links" currentButton={3}/>
+        <Buttoncomp buttonLabel="about site" currentButton={4}/>
+    </div>
+
+    {#if $buttonId !== 0}
+        <div transition:slide={{ delay: 0, duration: 300, axis: 'y' }}>
+        <!-- dont forget the @html thing this took you 30 minutes to figure out -->
+        <p>
+            {@html textIdArr[$buttonId].replaceAll('\n', '<br>')}
+        </p>
+        </div>
+    {/if}
+
+    <hr>
+</div>
 
 <style>
-    h1, :global(p, a) {
-        color: white;
-        font-family: sans-serif;
-    }
-
-    :global(p, a) {
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-    :global(a:link, a:visited) {
-        text-decoration: none;
-    }
-
-    :global(a:hover) {
-        text-decoration: underline;
-        color: #efefef;
-    }
-
     .card {
         display: block;
         background-color: #101010;
@@ -113,16 +90,17 @@
         border-width: 2px;
         border-radius: 25px;
         max-width: 78%;
-        margin: auto;
+        width: 100vw;
+        margin: 1rem;
     }
 
     .buttonsDiv {
-        display: inline;
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
     }
-    /* no default margins */
-    :global(h1, h2, h3, h4, h5, h6, p, span, a, strong, em, blockquote, cite, q, abbr, del, ins, mark, sub, sup, code, pre, kbd, var, samp, ol, ul) {
-        margin: unset;
-    }
+
     .topBar {
         min-height: 64px;
         height: 64px;
@@ -131,13 +109,5 @@
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: flex-start;
-    }
-
-    body {
-        background-color: black;
-        height: 100%;
-        overflow: auto;
-        margin: 0;
-        padding-top: 2%;
     }
 </style>

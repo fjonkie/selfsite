@@ -18,9 +18,9 @@
 
 <button on:click={showHideText}>
     {#if $buttonId === currentButton}
-    <Icon icon="material-symbols:arrow-drop-down-rounded"></Icon>
+    <Icon class="dropArrow" icon="material-symbols:arrow-drop-down-rounded"></Icon>
     {:else}
-    <Icon icon="material-symbols:arrow-drop-up-rounded"></Icon>
+    <Icon class="dropArrow" icon="material-symbols:arrow-drop-up-rounded"></Icon>
     {/if}
     {buttonLabel}
 </button>
@@ -31,7 +31,13 @@
         color: white;
         border-radius: 15px;
         border-color: white;
-        margin-bottom: 0.5rem;
-        margin-top: 0.5rem;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    :global(.dropArrow) {
+        font-size: 1.2rem;
     }
 </style>

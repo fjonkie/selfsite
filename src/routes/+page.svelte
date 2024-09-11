@@ -56,8 +56,12 @@
 <body>
     <div class="card">
         <div class="topBar">
-            <h1>{buttonIdArr[$buttonId]}</h1>
-            <!-- <img alt="fjonkie" src={fjonkPng} /> -->
+            <div class="topBarElement">
+                <h1 style="width: 100%;" >{buttonIdArr[$buttonId]}</h1>
+            </div>
+            <div class="topBarElement">
+                <img alt="fjonkie (idiot)" style="max-width: 100px" src={fjonkPng} />
+            </div>
         </div>
 
         <div class="buttonsDiv">
@@ -121,7 +125,14 @@
     }
     .topBar {
         min-height: 64px;
+        height: 64px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
     }
+
     body {
         background-color: black;
         height: 100%;

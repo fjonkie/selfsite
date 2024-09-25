@@ -2,29 +2,25 @@
     import Icon from '@iconify/svelte';
     import { buttonId } from '../stores';
 
-    let textState: boolean = false;
     export let currentButton: number = 1;
+    export let buttonLabel: string = "placeholder";
 
     function showHideText() {
-        textState = !textState;
-        if($buttonId !== 0 && $buttonId !== currentButton) {
+        if($buttonId !== currentButton) {
             buttonId.set(0)
             setTimeout(() => {
                 buttonId.set(currentButton)
             }, 350);
-        } else {
-            buttonId.set(currentButton)
         }
     }
-    export let buttonLabel: string = "placeholder";
 </script>
 
 
 <button on:click={showHideText}>
     {#if $buttonId === currentButton}
-    <Icon icon="material-symbols:arrow-drop-down-rounded"></Icon>
+    <Icon class="dropArrow" icon="material-symbols:arrow-drop-down-rounded"></Icon>
     {:else}
-    <Icon icon="material-symbols:arrow-drop-up-rounded"></Icon>
+    <Icon class="dropArrow" icon="material-symbols:arrow-drop-up-rounded"></Icon>
     {/if}
     {buttonLabel}
 </button>
@@ -34,7 +30,14 @@
         background-color: #040404;
         color: white;
         border-radius: 15px;
-        margin-bottom: 0.5rem;
-        margin-top: 1rem;
+        border-color: white;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    :global(.dropArrow) {
+        font-size: 1.2rem;
     }
 </style>

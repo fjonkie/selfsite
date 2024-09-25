@@ -3,6 +3,7 @@
     import { buttonId } from './stores';
     import { slide } from 'svelte/transition';
     import fjonkPng from '$lib/assets/fjonk.png';
+    import Audiobuttoncomp from './components/Audiobuttoncomp.svelte';
 
     const buttonIdArr: string[] = [
         "cool transition",
@@ -66,6 +67,8 @@
         <Buttoncomp buttonLabel="TTCM" currentButton={2}/>
         <Buttoncomp buttonLabel="links" currentButton={3}/>
         <Buttoncomp buttonLabel="about site" currentButton={4}/>
+        <Audiobuttoncomp audioSrc="https://en.pronouns.page/api/pronounce/GB/L2ZqyZJua2kv"/>
+        <Audiobuttoncomp audioSrc="https://en.pronouns.page/api/pronounce/GB/L23JkXJpLw" />
     </div>
 
     {#if $buttonId !== 0}
